@@ -2,123 +2,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rainwater Harvesting: Tradition & Innovation</title>
+    <title>Rainwater Harvesting Tank Levels</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f7f9fa;
-            color: #333;
-        }
-        header {
-            background: #0476d0;
-            color: white;
-            padding: 25px;
+            background: #f2f7fb;
             text-align: center;
-        }
-        h1, h2 {
-            margin: 0;
-            padding-bottom: 10px;
-        }
-        .content {
-            max-width: 900px;
-            margin: auto;
             padding: 20px;
         }
-        section {
-            margin-bottom: 30px;
-        }
-        section h2 {
+
+        h1 {
             color: #0a4d8c;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 8px;
         }
-        ul {
-            margin-left: 20px;
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
+
+        .tank-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 260px;
+        }
+
+        .tank-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .tank {
+            position: relative;
+            width: 120px;
+            height: 220px;
+            border: 3px solid #0a4d8c;
+            border-radius: 6px;
+            margin: 0 auto;
+            background: #eaf4ff;
+            overflow: hidden;
+        }
+
+        .water {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(to top, #1e90ff, #6ec6ff);
+            transition: height 1s ease;
+        }
+
+        .percentage {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
         footer {
-            background: #eee;
-            padding: 15px;
-            text-align: center;
-            font-size: 0.9em;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Harmony of Tradition & Innovation</h1>
-    <p>An Overview of Rainwater Harvesting Systems</p>
-</header>
+    <h1>🌧️ Rainwater Harvesting System</h1>
+    <p>Live Water Level Monitoring</p>
 
-<div class="content">
+    <div class="container">
 
-    <section>
-        <h2>What Is Rainwater Harvesting?</h2>
-        <p>
-            Rainwater harvesting is the practice of collecting and storing rainwater for later use, reducing dependency
-            on traditional water sources such as rivers or groundwater. The collected rainwater can be used for both
-            potable and non-potable purposes. :contentReference[oaicite:1]{index=1}
-        </p>
-    </section>
+        <!-- Primary Flush Tank -->
+        <div class="tank-card">
+            <div class="tank-title">🚿 Primary Flush Tank</div>
+            <div class="tank">
+                <div class="water" id="flushWater"></div>
+            </div>
+            <div class="percentage" id="flushText">0%</div>
+        </div>
 
-    <section>
-        <h2>Traditional Techniques</h2>
-        <ul>
-            <li><strong>Paar Systems</strong> – Harvest rainwater into sandy soil for storage.</li>
-            <li><strong>Talabs</strong> – Reservoirs used for irrigation and human use.</li>
-            <li><strong>Saza Kuva</strong> – Open communal wells in some regions.</li>
-            <li><strong>Johads</strong> – Small earthen check dams that improve groundwater recharge.</li>
-            <li><strong>Pat Systems</strong> – Channels that direct water into irrigation paths. :contentReference[oaicite:2]{index=2}</li>
-        </ul>
-    </section>
+        <!-- Overflow Tank -->
+        <div class="tank-card">
+            <div class="tank-title">🌊 Overflow Tank</div>
+            <div class="tank">
+                <div class="water" id="overflowWater"></div>
+            </div>
+            <div class="percentage" id="overflowText">0%</div>
+        </div>
 
-    <section>
-        <h2>Modern Techniques</h2>
-        <ul>
-            <li><strong>Rooftop Harvesting</strong> – Roofs act as catchment surfaces.</li>
-            <li><strong>Overhead & Underground Tanks</strong> – Storage close to point of collection.</li>
-            <li><strong>Agricultural Systems</strong> – Designed to meet farm water needs.</li>
-            <li><strong>Groundwater Dams</strong> – Capture surface water for recharge.</li>
-            <li><strong>Automated Systems</strong> – Use sensors and controllers for efficiency. :contentReference[oaicite:3]{index=3}</li>
-        </ul>
-    </section>
+    </div>
 
-    <section>
-        <h2>Tank & Storage Types</h2>
-        <ul>
-            <li><strong>Above Ground Tanks</strong> – Easy to install and inspect.</li>
-            <li><strong>Underground Tanks</strong> – Space-saving and protected from the elements.</li>
-            <li><strong>Modular Tanks</strong> – Panels that can be assembled to size. :contentReference[oaicite:4]{index=4}</li>
-        </ul>
-    </section>
+    <footer>
+        Rainwater Harvesting Project | SDG 6 • SDG 11 • SDG 12 • SDG 13
+    </footer>
 
-    <section>
-        <h2>Benefits</h2>
-        <ul>
-            <li>Reduces dependence on traditional water supplies.</li>
-            <li>Decreases stormwater runoff, erosion, and flooding risks.</li>
-            <li>Saves on water bills and energy consumption.</li>
-            <li>Supports irrigation and various residential uses. :contentReference[oaicite:5]{index=5}</li>
-        </ul>
-    </section>
+    <script>
+        // Example values (change these or connect to sensor/API later)
+        let primaryFlushLevel = 45;   // percentage
+        let overflowTankLevel = 78;   // percentage
 
-    <section>
-        <h2>Applications</h2>
-        <ul>
-            <li><strong>Residential</strong> – Garden irrigation, toilet flushing, laundry, and car washing.</li>
-            <li><strong>Commercial & Industrial</strong> – Irrigation and process water supply.</li>
-            <li><strong>Agricultural</strong> – Crop irrigation and livestock water sources. :contentReference[oaicite:6]{index=6}</li>
-        </ul>
-    </section>
+        // Update UI
+        document.getElementById("flushWater").style.height = primaryFlushLevel + "%";
+        document.getElementById("flushText").innerText = primaryFlushLevel + "% Full";
 
-</div>
-
-<footer>
-    Developed for GitHub Pages • Rainwater Harvesting Overview
-</footer>
+        document.getElementById("overflowWater").style.height = overflowTankLevel + "%";
+        document.getElementById("overflowText").innerText = overflowTankLevel + "% Full";
+    </script>
 
 </body>
 </html>
